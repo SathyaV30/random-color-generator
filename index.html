@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link rel ="stylesheet" href = "style.css">
+        <title>Random Color Generator</title>
+        
+      
+        <body>
+            
+           <h1>Random Color Generator</h1>
+            <div class ="board">
+                    <div class = "box">
+                
+                </div>
+        
+                </div>
+
+
+                <h2 > Click the box to generate a color</h2>
+
+                <p class = "choice"> Your color is: <span id = "c"></span><div class = "b" id = "a">
+
+                <span id = "a2"></span>
+
+                </div>
+            </p>
+
+            <p>
+                The hex of your color is: <span id = "a1"></span>
+            </p>
+        
+        
+        </body>
+        <script type="text/javascript" src="ntc.js"></script>
+
+  <script type="text/javascript">
+
+   document.querySelectorAll('.box').forEach(item => {
+    item.addEventListener('click', function () {
+        document.getElementById('a').style.backgroundColor = item.style.backgroundColor
+       document.getElementById('a1').innerText = rgbToHex(item.style.backgroundColor)
+       var n_match  = ntc.name(document.getElementById('a1').innerText.toUpperCase())
+       document.getElementById("c").innerText = n_match[1]
+
+     
+     
+    })
+})
+
+
+   
+
+
+ 
+
+  </script>
+        <script src = "script.js"></script>
+       
+       
+
+    </head>
+</html>
