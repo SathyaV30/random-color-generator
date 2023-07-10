@@ -6,7 +6,7 @@ setInterval(function(){
     for (let i=0;i<arr.length;i++ ) {
         arr[i].style.backgroundColor = getRandomColor()
     }  
-}, 80);
+}, 800);
 
 
 function getRandomColor() {
