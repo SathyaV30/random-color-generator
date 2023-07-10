@@ -1,63 +1,92 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <link rel ="stylesheet" href = "style.css">
-        <title>Random Color Generator</title>
-        
-      
-        <body>
-            
-           <h1>Random Color Generator</h1>
-            <div class ="board">
-                    <div class = "box">
-                
-                </div>
-        
-                </div>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Random Color Generator</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: white;
+      transition: background-color 2s;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
 
+    h1 {
+      margin-bottom: 20px;
+    }
 
-                <h2 > Click the box to generate a color</h2>
+    .board {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px 0;
+    }
 
-                <p class = "choice"> Your color is: <span id = "c"></span><div class = "b" id = "a">
+    .b {
+      width: 70px;
+      height: 70px;
+      border: none;
+      border-width: 2px;
+      margin-top: 10px;
+    }
 
-                <span id = "a2"></span>
+    span {
+      font-weight: bold;
+    }
 
-                </div>
-            </p>
+    p {
+      margin: 5px;
+      text-align: center;
+    }
 
-            <p>
-                The hex of your color is: <span id = "a1"></span>
-            </p>
-        
-        
-        </body>
-        <script type="text/javascript" src="ntc.js"></script>
+    .customization {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
 
-  <script type="text/javascript">
+    .customization label {
+      margin-right: 10px;
+    }
 
-   document.querySelectorAll('.box').forEach(item => {
-    item.addEventListener('click', function () {
-        document.getElementById('a').style.backgroundColor = item.style.backgroundColor
-       document.getElementById('a1').innerText = rgbToHex(item.style.backgroundColor)
-       var n_match  = ntc.name(document.getElementById('a1').innerText.toUpperCase())
-       document.getElementById("c").innerText = n_match[1]
+    .customization input[type="range"] {
+      width: 150px;
+    }
 
-     
-     
-    })
-})
+    .customization select {
+      margin-left: 10px;
+    }
+  </style>
+</head>
 
-
-   
-
-
- 
-
-  </script>
-        <script src = "script.js"></script>
-       
-       
-
-    </head>
+<body id="body">
+  <h1>Press the spacebar to generate a color</h1>
+  <div class="customization">
+    <label for="color-range">Color Range:</label>
+    <select id="color-range">
+      <option value="all">All Colors</option>
+      <option value="warm">Warm Colors</option>
+      <option value="cool">Cool Colors</option>
+      <option value="blues">Blues</option>
+      <option value="greens">Greens</option>
+      <option value="reds">Reds</option>
+    </select>
+    <label for="saturation">Saturation:</label>
+    <input type="range" id="saturation" min="0" max="100" value="50">
+    <label for="brightness">Brightness:</label>
+    <input type="range" id="brightness" min="0" max="100" value="50">
+  </div>
+  <div class="board">
+    <p class="choice"><span id="c">White</span></p>
+    <p><span id="a1">#FFFFFF</span></p>
+  </div>
+  <script type="text/javascript" src="ntc.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
