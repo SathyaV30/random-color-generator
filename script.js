@@ -2,6 +2,20 @@ document.addEventListener('DOMContentLoaded', function () {
   updateColor();
 });
 
+const saturationInput = document.getElementById('saturation');
+const brightnessInput = document.getElementById('brightness');
+const saturationValue = document.getElementById('saturation-value');
+const brightnessValue = document.getElementById('brightness-value');
+
+saturationInput.addEventListener('input', function() {
+  saturationValue.textContent = saturationInput.value;
+});
+
+brightnessInput.addEventListener('input', function() {
+  brightnessValue.textContent = brightnessInput.value;
+});
+
+
 function componentToHex(c) {
   var hex = c.toString(16);
   return hex.length == 1 ? "0" + hex : hex;
