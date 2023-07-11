@@ -21,30 +21,6 @@
       margin-bottom: 20px;
     }
 
-    .board {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 20px 0;
-    }
-
-    .b {
-      width: 70px;
-      height: 70px;
-      border: none;
-      border-width: 2px;
-      margin-top: 10px;
-    }
-
-    span {
-      font-weight: bold;
-    }
-
-    p {
-      margin: 5px;
-      text-align: center;
-    }
-
     .customization {
       display: flex;
       align-items: center;
@@ -57,10 +33,35 @@
 
     .customization input[type="range"] {
       width: 150px;
+      margin-right: 10px;
     }
 
-    .customization select {
-      margin-left: 10px;
+    .customization #saturation-value,
+    .customization #brightness-value {
+      width: 30px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .board {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .choice {
+      margin: 0;
+    }
+
+    .choice span {
+      font-weight: bold;
+    }
+
+    .color-code {
+      margin: 5px;
+      text-align: center;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -79,12 +80,14 @@
     </select>
     <label for="saturation">Saturation:</label>
     <input type="range" id="saturation" min="0" max="100" value="50">
+    <span id="saturation-value">50</span>
     <label for="brightness">Brightness:</label>
     <input type="range" id="brightness" min="0" max="100" value="50">
+    <span id="brightness-value">50</span>
   </div>
   <div class="board">
     <p class="choice"><span id="c">White</span></p>
-    <p><span id="a1">#FFFFFF</span></p>
+    <p class="color-code"><span id="a1">#FFFFFF</span></p>
   </div>
   <script type="text/javascript" src="ntc.js"></script>
   <script src="script.js"></script>
